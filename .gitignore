@@ -1,0 +1,13 @@
+# Map world and binary inputs distributed separately
+world_full/
+world_preview/
+assets/
+export/datapack/data/ringworld_nether/structures/*.nbt
+mod-ringworld-nether/libs/*.jar
+*.class
+.gradle/
+build/
+__pycache__/
+*.zip
+*.log
+.DS_Store

@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+displayTest="MATCH_VERSION"
+[[mods]]
+modId="ringworld_nether"
+version="${file.jarVersion}"
+displayName="RingWorld Nether - Barttolo (experimental addon)"
+description='''Addon independiente para el Nether de RingWorld Forge 1.20.1. No modifica el Overworld.'''
+[[dependencies.ringworld_nether]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.10,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.ringworld_nether]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.ringworld_nether]]
+modId="ringworld"
+mandatory=true
+versionRange="[0,)"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.barttolo.ringworldnether.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "NetherDimensionProfileMixin",
+    "NetherRuntimeWallMixin",
+    "NetherSettingsPacketMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}
