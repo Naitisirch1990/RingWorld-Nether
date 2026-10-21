@@ -37,3 +37,21 @@ Objetivo: **Minecraft Java 1.20.1 / Forge 47.4.10 / Java 17**, con el `.jar` del
 - `docs/`: instalación segura y pruebas.
 
 **Estado:** trabajo experimental; se han realizado pruebas de estructura de archivos, no pruebas en el motor de Minecraft. Ninguna modificación al servidor principal ni al repositorio RingWorld original.
+
+## Generar el mapa desde las fuentes
+
+Estas herramientas no editan un mundo existente: generan **solo archivos DIM-1** en un directorio nuevo.
+
+Se necesita Python 3.10+ y NumPy (ver `mapa/requirements.txt`). Los esquemáticos aportados originalmente deben colocarse por el propietario en `assets/`, respetando sus nombres del plan `mapa/layout.py`.
+
+```bash
+python -m pip install -r mapa/requirements.txt
+python mapa/pack_templates.py export
+python mapa/build_dimension.py --out world_preview --preview --templates export
+python mapa/build_dimension.py --out world_full --full --templates export
+python mapa/verify_dimension.py world_full export
+```
+
+**Advertencia:** `build_dimension.py` no sobrescribe un archivo `.mca` existente. Genera en una carpeta vacía para repetir una construcción. El mapa completo ocupa bastante espacio sin comprimir; no instalar antes de compilar y validar el addon geométrico.
+
+Los ZIP del mapa y las estructuras se entregaron por separado al dueño del servidor. No hay release ni un `.jar` nuevo verificado en este repositorio.
